@@ -5,3 +5,5 @@ at SK텔링크
 ESC 누르고 :wq
 
 vim 에디터
+
+by 조병옥
