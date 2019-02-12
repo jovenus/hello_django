@@ -7,3 +7,6 @@ ESC 누르고 :wq
 vim 에디터
 
 by 조병옥
+
++ 장고 개발환경 세팅
++ Git/Github
