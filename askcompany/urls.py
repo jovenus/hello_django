@@ -18,7 +18,11 @@ from django.urls import path
 from blog.views import index, hello_times
 
 urlpatterns = [
+    # re_path('^blog/1/$', post detail),
+    # re_path('^blog/1/edit/$', post_edit)
     path('admin/', admin.site.urls),
     path('blog/hello_times/<int:times>/', hello_times),
+    # re_path(r'blog/hello_times/(?P<times>\d+)/$', hello_times),
     path('', index),
+    # re_path('^$', index)
 ]
