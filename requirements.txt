@@ -1,2 +1,4 @@
 django~=2.1.0
 gunicorn
+requests
+beautifulsoup4           #필요한 라이브러리는 꼭 명시해 둘 것
