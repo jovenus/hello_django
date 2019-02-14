@@ -7,6 +7,14 @@
     <body>
         <h1>네이버 "{{ query }}" 검색결과</h1>
 
+        <form>
+            <input type="text" name="query"
+                    value="{{ query }}"
+                    placeholder="검색어를 입력해주세요." />
+            <input type="submit" value="검색" />
+        </form>
+    
+
          <ul>
             {% for post in post_list %}
                 <li>
