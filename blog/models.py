@@ -8,4 +8,5 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     # pass
 
-
+    # class Meta:                  #migration 대상에서 빼고 싶을 때 지정
+    #     manaaged = False 
