@@ -11,7 +11,7 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title']
 
 
-    def short_content(selg, post):
+    def short_content(self, post):
         return post.content[:20]
 
         
