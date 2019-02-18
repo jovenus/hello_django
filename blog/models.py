@@ -1,7 +1,12 @@
+from django.conf import settings    # 설정값을 가져오는 올바른 방법
 from django.db import models
+# from django.comtrib.auth.models import User   #별로 추천하지 않음
 
+
+settings.AUTH_USER_MODEL
 # Create your models here.
 class Post(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, db_index=True)
     content = models.TextField()
     tags = models.CharField(max_length=20)
@@ -17,6 +22,8 @@ class Post(models.Model):
     #     manaaged = False 
 
 class Comment (models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     author_name = models.CharField(max_length=100)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
