@@ -11,3 +11,7 @@ class ShopAdmin(admin.ModelAdmin):
 
     def short_content(self, shop):
         return post.content[:20]
+
+@admin.register(Item)
+class ItemAdmin(admin.ModelAdmin):
+    pass
