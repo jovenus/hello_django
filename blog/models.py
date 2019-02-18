@@ -4,7 +4,7 @@ from django.db import models
 class Post(models.Model):
     title = models.CharField(max_length=100, db_index=True)
     content = models.TextField()
-    tags = models.TextField(max_length=20)
+    tags = models.CharField(max_length=20)
     is_publish = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
