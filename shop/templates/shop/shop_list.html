@@ -2,23 +2,56 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title> </title>
+    <title>온라인 마켓 리스트</title>
+    <link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
 </head>
 <body>
-    <h1>온라인 마켓 리스트</h1>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <tbody>	        <h5 class="my-0 mr-md-auto font-weight-normal">
+            온라인 마켓 리스트
+        </h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/blog/">blog</a>
+            <a class="p-2 text-dark" href="/shop/">shop</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </div>
 
-    <table>
-        <tbody>
+     <div class="container">
+        <div class="card-group">
             {% for shop in shop_list %}
-            <tr>
-                <td>{{ shop.id }}</td>
-                <td>{{ shop.name }}</td>
-                <td>{{ shop.address }}</td>
-                <td>{{ shop.desc }}</td>
-            </tr>            
+                <div class="col-sm-4 mb-3">
+                    <div class="card">
+                        <img src="https://mblogthumb-phinf.pstatic.net/20150701_201/whdrnr95_1435721605440cJvNE_JPEG/DSC_0035.jpg?type=w2" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                #{{ shop.id }}. {{ shop.name }}
+                            </h5>
+                            {% if shop.address %}
+                                <p class="card-text">
+                                    {{ shop.address }}
+                                </p>
+                            {% endif %}
+                            {% if shop.desc %}
+                                <p class="card-text">
+                                    {{ shop.desc }}
+                                </p>
+                            {% endif %}
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {{ shop.created_at }}
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             {%endfor %}
-        </tbody>
-    </table>
+        </div>
+    </div>
 
 </body>
 </html>
