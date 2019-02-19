@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> </title>
+</head>
+<body>
+    <h1>온라인 마켓 리스트</h1>
+
+    <table>
+        <tbody>
+            {% for shop in shop_list %}
+            <tr>
+                <td>{{ shop.id }}</td>
+                <td>{{ shop.name }}</td>
+                <td>{{ shop.address }}</td>
+                <td>{{ shop.desc }}</td>
+            </tr>            
+            {%endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+

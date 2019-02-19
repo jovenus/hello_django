@@ -7,11 +7,6 @@ class ShopAdmin(admin.ModelAdmin):
     list_display_links = ['name']
     # list_filter = ['is_publish']
     search_fields = ['name']
-
-    def __str__(self):
-        return self.name
-
-
     # def short_content(self, shop):
     #     return post.content[:20]
 
