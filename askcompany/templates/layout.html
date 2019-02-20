@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>온라인 마켓 리스트</title>
+    <link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <tbody>	        <h5 class="my-0 mr-md-auto font-weight-normal">
+            {% block page_title %}
+            {% endblock %}
+        </h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/blog/">blog</a>
+            <a class="p-2 text-dark" href="/shop/">shop</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="container">
+        <div class="col-sm-12">
+            <hr/>
+            &copy; 2019. ANDY
+        </div>
+    </div>
+    
+</body>
+</html>
