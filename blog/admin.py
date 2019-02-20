@@ -23,6 +23,9 @@ class PostAdmin(admin.ModelAdmin):
 # admin.site.register(Comment)
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['author', 'author_name', 'post', 'message']
+    list_display_links = ['message']
+    # list_filter = ['is_publish']
+    search_fields = ['message']
 
 # Register your models here.
