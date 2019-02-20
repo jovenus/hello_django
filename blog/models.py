@@ -34,3 +34,15 @@ class Zipcode(models,Model):
     code = models.CharField(max_length=6, unique=True)
     desc = models.TextField()
 """
+
+# class Shop (models.Model):
+#     name = CharField(max_length=100)
+#     desc = TextField(blank=True)
+#     address = CharField(max_length=50)
+
+# class Item (models.Model):
+#     shop = ForeignKey(Shop, on_delete=models.CASCADE)
+#     name = CharField(max_length=100)
+#     desc = TextField(blank=True)
+#     price = PositiveIntegerField()
+#     is_public = BooleanField(default=False)
