@@ -8,6 +8,10 @@
         {{ shop.desc }} |
         {{ shop.address }}
 
+        {% if shop.photo %}
+        <img src="{{ shop.photo.url }}" />"
+        {% endif %}
+
         <hr/>
         <a href="/shop/" class="btn btn-primary">목록으로</a>
     </div>
