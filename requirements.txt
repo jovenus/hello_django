@@ -3,3 +3,4 @@ gunicorn
 requests
 beautifulsoup4           #필요한 라이브러리는 꼭 명시해 둘 것
 pillow
+django-debug-toolbar
