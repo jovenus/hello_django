@@ -9,4 +9,11 @@ def index(request):
     })
 
 
+def shop_detail(request, pk):
+    # 즉시 DB로부터 데이터를 가져옵니다.
+    shop = shop.objects.get(pk=pk)
+    return render(request, 'shop/shop_detail.html', {
+        'shop': shop,
+    })
+
 # Create your views here.

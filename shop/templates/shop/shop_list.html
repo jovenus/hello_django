@@ -6,8 +6,7 @@
     <link rel="stylesheet"
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
-    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -29,7 +28,9 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShjgHMQV95fnUYO5DcBoAx-X-0J4YHOTgJbzYcHqMKl5Oh09uR" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">
-                                #{{ shop.id }}. {{ shop.name }}
+                                <a href="/shop/{{shop.id}}/">
+                                   #{{ shop.id }}. {{ shop.name }}
+                                </a>
                             </h5>
                             {% if shop.address %}
                                 <p class="card-text">
