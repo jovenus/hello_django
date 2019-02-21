@@ -70,11 +70,11 @@ def shop_edit(request, pk):
         'form':form,
     })
 
-# from django.views.generic import UpdateView
+from django.views.generic import UpdateView
 
-# shop_edit_cbv = UpdateView.as_view(
-#     model=Shop, form_class=ShopForm,
-#     success_url='/shop/')
+shop_edit_cbv = UpdateView.as_view(
+    model=Shop, form_class=ShopForm,
+    success_url='/shop/')
 
 
 
