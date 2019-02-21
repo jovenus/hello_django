@@ -9,7 +9,7 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShjgHMQV95fnUYO5DcBoAx-X-0J4YHOTgJbzYcHqMKl5Oh09uR" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="/shop/{{shop.id}}/">
+                                <a href="{% url "shop:shop_detail" shop.id %}">
                                    #{{ shop.id }}. {{ shop.name }}
                                 </a>
                             </h5>
@@ -34,7 +34,10 @@
             {%endfor %}
         </div>
         
-        <a href="/shop/new/" class="btn btn-primary">새 가게 등록</a>
+        <a href="{% url "shop:shop_new" %}" class="btn btn-primary">새 가게 등록</a>
+
+        {% url "shop:index" %}     # -> /shop/new/로 호출
+
     </div>
     
     {% endblock %}

@@ -76,6 +76,12 @@ shop_edit_cbv = UpdateView.as_view(
     model=Shop, form_class=ShopForm,
     success_url='/shop/')
 
+# def shop_del(request):
+#     shop.object = shop.get_object()
+#     success_url = shop.get_success_url()
+#     shop.object.delete()
+#     return HttpResponseRedirect(success_url)
+
 
 
 # Create your views here.
