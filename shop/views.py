@@ -1,23 +1,36 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
+
 from .models import Shop
 from .forms import ShopForm
 
-def index(request):
-    #전체 Shop 목록을 가져올 예정이다. (Lazy한 틁성)
-    qs = Shop.objects.all()
-    return render(request, 'shop/shop_list.html', {
-        'shop_list': qs,
-    })
+# def index(request):
+#     #전체 Shop 목록을 가져올 예정이다. (Lazy한 틁성)
+#     qs = Shop.objects.all()
+#     return render(request, 'shop/shop_list.html', {
+#         'shop_list': qs,
+#     })
 
+# class PostListView(ListView):
+#     model = Shop
 
-def shop_detail(request, pk):
-    # 즉시 DB로부터 데이터를 가져옵니다.
-    shop = Shop.objects.get(pk=pk)
-    return render(request, 'shop/shop_detail.html', {
-        'shop': shop,
-    })
+#     def get_context_data(self):
+#         context = super().get_context_data()
+#         context.update({
+#             'hello': 'world',
+#         })
+#         return context
 
+index = ListView.as_view(model=Shop)
 
+# def shop_detail(request, pk):
+#     # 즉시 DB로부터 데이터를 가져옵니다.
+#     shop = Shop.objects.get(pk=pk)
+#     return render(request, 'shop/shop_detail.html', {
+#         'shop': shop,
+#     })
+
+shop_detail = DetailView.as_view(model=Shop)
 
 def shop_new(request):
     form_cls = ShopForm
@@ -42,7 +55,7 @@ def shop_new(request):
         'form':form,
     })
 
-from django.views.generic import CreateView
+# from django.views.generic import CreateView
 
 shop_new_cbv = CreateView.as_view(
     model=Shop, form_class=ShopForm)
@@ -69,7 +82,7 @@ def shop_edit(request, pk):
         'form':form,
     })
 
-from django.views.generic import UpdateView
+# from django.views.generic import UpdateView
 
 shop_edit_cbv = UpdateView.as_view(
     model=Shop, form_class=ShopForm)
