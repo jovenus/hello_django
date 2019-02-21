@@ -30,7 +30,7 @@ def shop_new(request):
             form = form_cls(request.POST, request.FILES)
             if form.is_valid():
                 shop = form.save()
-                return redirect('/shop/{}'.format(shop.id))
+                return redirect(shop)
     else:
         form = form_cls()
         # form = form_cls(request.POST, request.FILES)
@@ -45,8 +45,7 @@ def shop_new(request):
 from django.views.generic import CreateView
 
 shop_new_cbv = CreateView.as_view(
-    model=Shop, form_class=ShopForm,
-    success_url='/shop/')
+    model=Shop, form_class=ShopForm)
 
 def shop_edit(request, pk):
     # try:
@@ -62,7 +61,7 @@ def shop_edit(request, pk):
             form = form_cls(request.POST, request.FILES, instance=shop)
             if form.is_valid():
                 shop = form.save()
-                return redirect('/shop/{}'.format(shop.id))
+                return redirect(shop)
     else:
         form = form_cls(instance=shop)
 
@@ -73,8 +72,7 @@ def shop_edit(request, pk):
 from django.views.generic import UpdateView
 
 shop_edit_cbv = UpdateView.as_view(
-    model=Shop, form_class=ShopForm,
-    success_url='/shop/')
+    model=Shop, form_class=ShopForm)
 
 # def shop_del(request):
 #     shop.object = shop.get_object()
