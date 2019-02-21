@@ -42,4 +42,10 @@ def shop_new(request):
         'form':form,
     })
 
+from django.views.generic import CreateView
+
+shop_new_cbv = CreateView.as_view(
+    model=Shop, form_class=ShopForm,
+    success_url='/shop/')
+
 # Create your views here.
