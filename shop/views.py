@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .models import Shop
 from .forms import ShopForm
@@ -87,17 +88,19 @@ def shop_edit(request, pk):
 shop_edit_cbv = UpdateView.as_view(
     model=Shop, form_class=ShopForm)
 
-def shop_del(request, pk):
-    shop = get_object_or_404(Shop, pk=pk)
+# def shop_del(request, pk):
+#     shop = get_object_or_404(Shop, pk=pk)
 
-    if request.method == 'POST':
-        shop.delete()
-        return redirect('shop:index')
+#     if request.method == 'POST':
+#         shop.delete()
+#         return redirect('shop:index')
 
 
-    return render(request, 'shop/shop_confirm_delete.html', {
-        'shop': shop,
-    })
+#     return render(request, 'shop/shop_confirm_delete.html', {
+#         'shop': shop,
+#     })
 
+shop_del = DeleteView.as_view(model=Shop, 
+                                success_url=reverse_lazy('shop:index'))
 
 # Create your views here.
