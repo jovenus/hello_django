@@ -13,5 +13,5 @@ urlpatterns = [
     path('<int:pk>/edit/', views.shop_edit, name='shop_edit'),
     path('<int:pk>/edit_cbv/', views.shop_edit_cbv, name='shop_edit_cbv'),   
     # # TODO : delete shop
-    # path('<int:pk>/del/', views.shop_del),   
+    path('<int:pk>/del/', views.shop_del),   
 ]
