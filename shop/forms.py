@@ -8,5 +8,5 @@ class ShopForm(forms.ModelForm):        #모델폼은 자동으로 만들어지�
 
     class Meta:
         model = Shop
-        fields = '__all__'                  #모든 필드 가져오기
-        # fields = ['title', 'content']     #지정 필드만 가져오기
+        # fields = '__all__'                  #모든 필드 가져오기
+        fields = ['name', 'photo', 'desc', 'address']     #지정 필드만 가져오기
